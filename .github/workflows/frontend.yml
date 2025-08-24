@@ -1,0 +1,40 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev, main]
+
+jobs:
+  build-and-test-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # Node setup
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Install dependencies
+      - run: npm install
+
+      # Lint
+      - run: npm run lint
+
+      # Run unit tests
+      - run: npm test
+
+      # Build for deployment (Expo or Web)
+      - run: npm run build
+
+      # Deploy (optional, Netlify or Vercel)
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish-dir: ./build
+          production-deploy: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
