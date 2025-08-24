@@ -11,6 +11,10 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
     "ios": {
       "supportsTablet": true
     },
@@ -19,8 +23,6 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true
-    },
-    "web": {
     }
   }
 }
