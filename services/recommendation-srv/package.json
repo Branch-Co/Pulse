@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "src/handler.js",
   "scripts": {
-    "lint": "echo 'No lint configured yet'",
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "echo 'No tests configured yet'"
   },
   "dependencies": {}
