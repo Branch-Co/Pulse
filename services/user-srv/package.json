@@ -2,5 +2,9 @@
   "name": "user-srv",
   "version": "1.0.0",
   "main": "src/handler.js",
+  "scripts": {
+    "lint": "echo 'No lint configured yet'",
+    "test": "echo 'No tests configured yet'"
+  },
   "dependencies": {}
 }
