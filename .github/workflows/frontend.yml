@@ -20,25 +20,25 @@ jobs:
 
       # Step 3: Install dependencies
       - run: npm install
-        working-directory: Pulse/apps/mobile-app
+        working-directory: apps/mobile-app
 
       # Step 4: Lint
       - run: npm run lint
-        working-directory: Pulse/apps/mobile-app
+        working-directory: apps/mobile-app
 
       # Step 5: Unit tests
       - run: npm test
-        working-directory: Pulse/apps/mobile-app
+        working-directory: apps/mobile-app
 
       # Step 6: Build project
       - run: npm run build
-        working-directory: Pulse/apps/mobile-app
+        working-directory: apps/mobile-app
 
       # Step 7: Deploy to Netlify
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: Pulse/apps/mobile-app/build
+          publish-dir: apps/mobile-app/build
           production-deploy: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
