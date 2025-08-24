@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "mobile-app",
+    "platforms": ["ios", "android", "web"],
     "slug": "mobile-app",
     "version": "1.0.0",
     "orientation": "portrait",
