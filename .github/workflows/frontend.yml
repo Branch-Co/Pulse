@@ -10,30 +10,35 @@ jobs:
   build-and-test-frontend:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout code
       - uses: actions/checkout@v3
-      
-      # Node setup
+
+      # Step 2: Setup Node
       - uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      # Install dependencies
+      # Step 3: Install dependencies
       - run: npm install
+        working-directory: Pulse/apps/mobile-app
 
-      # Lint
+      # Step 4: Lint
       - run: npm run lint
+        working-directory: Pulse/apps/mobile-app
 
-      # Run unit tests
+      # Step 5: Unit tests
       - run: npm test
+        working-directory: Pulse/apps/mobile-app
 
-      # Build for deployment (Expo or Web)
+      # Step 6: Build project
       - run: npm run build
+        working-directory: Pulse/apps/mobile-app
 
-      # Deploy (optional, Netlify or Vercel)
+      # Step 7: Deploy to Netlify
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.2
         with:
-          publish-dir: ./build
+          publish-dir: Pulse/apps/mobile-app/build
           production-deploy: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
