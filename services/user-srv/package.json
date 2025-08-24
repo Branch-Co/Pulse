@@ -1,0 +1,6 @@
+{
+  "name": "user-srv",
+  "version": "1.0.0",
+  "main": "src/handler.js",
+  "dependencies": {}
+}
