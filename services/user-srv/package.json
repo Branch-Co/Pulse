@@ -1,0 +1,10 @@
+{
+  "name": "user-srv",
+  "version": "1.0.0",
+  "main": "src/handler.js",
+  "scripts": {
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
+    "test": "echo 'No tests configured yet'"
+  },
+  "dependencies": {}
+}
